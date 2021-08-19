@@ -8,6 +8,10 @@ function Navbar() {
     const handleClick =()=>{
         setClick(!click)
     }
+
+    const closeMenu =() =>{
+        setClick(false)
+    }
     return (
         <div>
             <nav className="navbar">
@@ -18,6 +22,26 @@ function Navbar() {
                     <div className="menu-icon" onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
+                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                        <li className="nav-item">
+                            <Link to="/" className="nav-links" onClick={closeMenu}>
+                                Home
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link to="/signup" className="nav-links" onClick={closeMenu}>
+                                Sign up
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link to="/login" className="nav-links" onClick={closeMenu}>
+                                Login
+                            </Link>
+                        </li>
+
+                    </ul>
                 </div>
             </nav>
         </div>
