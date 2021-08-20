@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 function Navbar() {
 
     const [click, setClick]=useState(false)
+    const [button, setButton] = useState(true)
 
     const handleClick =()=>{
         setClick(!click)
@@ -42,6 +43,7 @@ function Navbar() {
                         </li>
 
                     </ul>
+                    {button && <Button buttonStyle='btn--outline'>Sign UP</Button>}
                 </div>
             </nav>
         </div>
